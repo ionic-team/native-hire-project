@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "native-hire-project",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {}
+}

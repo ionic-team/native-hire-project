@@ -1,0 +1,7 @@
+{
+  "name": "native-hire-project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
