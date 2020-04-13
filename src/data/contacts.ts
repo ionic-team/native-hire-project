@@ -1,3 +1,7 @@
+import { Plugins } from '@capacitor/core';
+
+const { Contacts } = Plugins;
+
 export interface Contact {
   id: string;
   firstName: string;
@@ -6,21 +10,8 @@ export interface Contact {
   emailAddresses: string[];
 }
 
-const messages: Contact[] = [
-  {
-    id: '1',
-    firstName: 'Elton',
-    lastName: 'John',
-    phoneNumbers: ['6085551111'],
-    emailAddresses: ['elton@eltonjohn.com'],
-  },
-  {
-    id: '2',
-    firstName: 'Freddie',
-    lastName: 'Mercury',
-    phoneNumbers: ['6085552222'],
-    emailAddresses: ['freddie@queenonline.com'],
-  },
-];
+export const getContacts = async (): Promise<Contact[]> => {
+  const result = await Contacts.getAll();
 
-export const getContacts = async () => messages;
+  return result.contacts;
+};
