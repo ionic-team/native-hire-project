@@ -1,6 +1,6 @@
-import MessageListItem from '../components/MessageListItem';
+import ContactListItem from '../components/ContactListItem';
 import React, { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Contact, getContacts } from '../data/contacts';
 import {
   IonContent,
   IonHeader,
@@ -14,31 +14,31 @@ import './Home.css';
 
 const Home: React.FC = () => {
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [contacts, setContacts] = useState<Contact[]>([]);
 
-  useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
+  useIonViewWillEnter(async () => {
+    const msgs = await getContacts();
+    setContacts(msgs);
   });
 
   return (
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
+          <IonTitle>Contacts</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">
-              Inbox
+              Contacts
             </IonTitle>
           </IonToolbar>
         </IonHeader>
 
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {contacts.map(contact => <ContactListItem key={contact.id} contact={contact} />)}
         </IonList>
       </IonContent>
     </IonPage>
