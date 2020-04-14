@@ -16,7 +16,7 @@ import java.util.Arrays;
     requestCodes = { Contacts.GET_ALL_REQUEST }
 )
 public class Contacts extends Plugin {
-  static final int GET_ALL_REQUEST = 95817;
+  static final int GET_ALL_REQUEST = 30033;
 
   @PluginMethod()
   public void getAll(PluginCall call) {
