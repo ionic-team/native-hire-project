@@ -11,7 +11,13 @@ export interface Contact {
 }
 
 export const getContacts = async (): Promise<Contact[]> => {
-  const result = await Contacts.getAll();
+  try {
+    const result = await Contacts.getAll();
 
-  return result.contacts;
+    return result.contacts;
+  } catch (e) {
+    console.error(`ERR (${getContacts.name}):`, e);
+  }
+
+  return [];
 };
