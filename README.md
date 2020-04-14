@@ -25,6 +25,18 @@ cd ./native-hire-project
 npm install
 ```
 
+Next, build the web app so that it can be run on devices:
+
+```shell
+npm run build
+```
+
+Finally, sync your web app with your native projects using Capacitor:
+
+```shell
+npx cap sync
+```
+
 ### Getting Started
 
 This app has two React components: [`Home`](https://github.com/ionic-team/native-hire-project/blob/master/src/pages/Home.tsx) (the root component) and [`ContactListItem`](https://github.com/ionic-team/native-hire-project/blob/master/src/components/ContactListItem.tsx). Contact data is loaded from native in [`contacts.ts`](https://github.com/ionic-team/native-hire-project/blob/master/src/data/contacts.ts). You are free to modify the React app however you like, but for this project we are more interested in evaluating your competency with iOS and Android.
@@ -44,3 +56,14 @@ The shells of these functions are already defined in their respective native pro
 - **Part 3**: Think about how you might further extend this API with the idea that the contacts plugin code in this app could be open-sourced and reused in many apps. As a maintainer, what functionality might you add? What would you focus on? What would be most important to get right?
 
   Write down your thoughts and be prepared to share with us.
+
+### Commands
+
+Most of these commands use `npx cap`, which runs the Capacitor CLI. See [the docs](https://capacitor.ionicframework.com/docs/basics/workflow) for more details.
+
+- `npm run build` - Rebuilds the web app.
+- `npx cap sync` - Copy web app into native projects, install native dependencies, etc.
+- `npx cap open ios` - Open the iOS project in Xcode.
+- `npx cap open android` - Open the Android project in Android Studio.
+
+Capacitor encourages you to use Xcode & Android Studio to deploy your app to iOS and Android devices. Just make sure to rebuild the web app and re-sync if you change web assets.
